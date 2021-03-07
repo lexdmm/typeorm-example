@@ -1,0 +1,20 @@
+{
+  "type": "mssql",
+  "host": "localhost",
+  "port": 1440,
+  "username": "sa",
+  "password": "strong!Passw0rd",
+  "database": "tests",
+  "entities": [
+    "src/models/**/*.ts"
+ ],
+ "migrations": [
+  "src/migrations/**/*.ts"
+],
+ "cli":{
+  "migrationsDir": [
+    "src/migrations/"
+  ],
+  "entitiesDir": "src/models"
+  }
+}
