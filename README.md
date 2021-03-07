@@ -32,6 +32,8 @@ npm install
 # install devDependencies
 npm install --save-dev
 
+```
+
 ### Mais referencias:
 - Você pode ver a documentação completa do TypeOrm aqui:
 https://typeorm.io/
