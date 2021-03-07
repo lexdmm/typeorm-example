@@ -18,9 +18,17 @@ docker pull mcr.microsoft.com/mssql/server:2017-latest
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1440:1433 -d mcr.microsoft.com/mssql/server:2017-latest
 ```
 Defini uma senha para o banco que se encontra no arquivo ormconfig.json na porta 1440, mas você pode definir a porta e a senha que quiser, ao conectar nessa porta ele direciona para porta 1433 dentro do docker. **Nesse momento não me preocupei em expor a senha do banco, porquê é um banco para fins de teste, tenha esse cuidado no gitHub**.
+
 ### 3 - Instalação doSQL Server Management Studio (SSMS)
 Baixar o SQL Server Management Studio (SSMS) para manipular o banco de dados:
 https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
 Como a Microsoft vive mudando os links, pesquise pelo nome que achará facilmente.
 
+### 4 - Instalação da Aplicação 
+``` bash
+# install dependencies
+npm install
+
+# install devDependencies
+npm install --save-dev
 
