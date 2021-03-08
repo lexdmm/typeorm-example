@@ -22,7 +22,7 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "off",
     "class-methods-use-this":"off",
     "import/extensions": [
       "error",
@@ -30,8 +30,7 @@
       {
         "ts": "never"
       }
-    ],
-    "import/prefer-default-export": false
+    ]
   },
   "settings": {
     "import/resolver": {
