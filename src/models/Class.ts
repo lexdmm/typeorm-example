@@ -2,7 +2,7 @@ import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColu
 
 @Entity()
 export default class Class {
-    @PrimaryGeneratedColumn("uuid")
+    @PrimaryGeneratedColumn("increment")
     id: number;
 
     @Column({ length: 255, type: "varchar" })
@@ -11,9 +11,9 @@ export default class Class {
     @Column({ type: "integer" })
     duration: number;
 
-    @CreateDateColumn({ type: "datetime" })
-    created_At: Date;
+    @CreateDateColumn({ name: "created_At", type: "datetime" })
+    createdAt: Date;
 
-    @UpdateDateColumn({ type: "datetime" })
-    update_At: Date;
+    @UpdateDateColumn({ name: "update_At", type: "datetime" })
+    updateAt: Date;
 }

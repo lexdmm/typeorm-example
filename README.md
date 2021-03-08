@@ -62,6 +62,29 @@ npm run typeorm migration:run
 # comando para criar uma entity a partir do nome
 npx typeorm entity:create -n Class
 ```
+### Inserir e Pesquisar Dados no Postman
+
+Primeiro execute o comando subindo a aplicação na porta 3000
+``` bash
+npm start 
+```
+
+Usando POST para inserir http://localhost:3000/class 
+``` bash
+{
+    "name": "Tecnologia da Informação",
+    "duration": 120
+}
+```
+
+Usando GET para consultar dados 
+http://localhost:3000/class/all
+
+Usando GET para um dado específico, no caso pelo id
+http://localhost:3000/class/id/<id>
+
+Usando GET para um dado específico, no caso pelo nome da class
+http://localhost:3000/class/name/<name>
 
 ### Mais referencias:
 - Você pode ver a documentação completa do TypeOrm aqui:
