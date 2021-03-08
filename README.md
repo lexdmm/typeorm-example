@@ -59,7 +59,7 @@ npm run typeorm migration:run
 
 # observe na sequencia que vai criar a tabela "class" e a "migration" que server para guardar as mudanças de versão. O mesmo foi feito para a tabela "lesson"
 
-# comando para criar a tabela a partir da model, ao executar também verciona criando o migration
+# comando para criar a tabela a partir da model, ao executar também verciona criando o migration, bom para quando criar um campo novo na tabela
 npm run typeorm migration:generate -- -n CreateClass
 
 # comando para criar uma entity a partir da tabela do banco.
