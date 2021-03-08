@@ -58,6 +58,9 @@ npm run typeorm migration:create -- -n CreateClass
 npm run typeorm migration:run
 
 # observe na sequencia que vai criar a tabela "class" e a "migration" que server para guardar as mudanças de versão. O mesmo foi feito para a tabela "lesson"
+
+# comando para criar uma entity a partir do nome
+npx typeorm entity:create -n Class
 ```
 
 ### Mais referencias:
