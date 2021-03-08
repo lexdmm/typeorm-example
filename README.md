@@ -1,6 +1,7 @@
 # TypeORM Example
 ## Descrição
-Exemplo de utilização do TypeORM com o docker.
+Exemplo de utilização do TypeORM com o docker. 
+- como versionar um banco com o CLI do TypeOrm
 
 ### 1 - Instalação do Docker 
 Primeiro baixe o docker na sua máquina e instale, ele roda em linux ou windowns 10. Mas no caso do windowns 10 somente nas verões que possuem o kernel do linux.
@@ -31,7 +32,30 @@ npm install
 
 # install devDependencies
 npm install --save-dev
+```
 
+### 4 - Versionando seu banco
+``` bash
+# como criar uma migration (ver o script "typeorm" em package.json). Vai gerar um arquivo chamado <timestamp-createClass.ts>
+npm run typeorm migration:create -- -n CreateClass
+
+# Ao rerar o 1614027434846-createClass.ts serão gerados dois métodos async "up" e "down" onde "up" cria e constroe e "down" desfaz ou dropa etc.
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.createTable(
+      new Table({
+        name: 'class',
+            // código omitido, onde você define a tabela e colunas da migração.
+        ],
+      }),
+    );
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    // código omitido
+  }
+
+# como criar uma migration (ver o script "typescritp" em package.json). Vai gerar um arquivo chamado <timestamp-createClass.ts>
+npm run typeorm migration:run
 ```
 
 ### Mais referencias:
