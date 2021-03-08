@@ -36,7 +36,7 @@ npm install --save-dev
 
 ### 5 - Versionando seu banco
 ``` bash
-# como criar uma migration (ver o script "typeorm" em package.json). Vai gerar um arquivo chamado <timestamp-createClass.ts>
+# Executar o comadno abaixo para criar uma migration (ver o script "typeorm" em package.json). Vai gerar o fonte chamado <timestamp-createClass.ts>
 npm run typeorm migration:create -- -n CreateClass
 
 # Ao gerar o 1614027434846-createClass.ts no comando acima serão criados dois métodos async "up" e "down" onde "up" cria e constroe e "down" desfaz ou dropa etc.
@@ -54,12 +54,12 @@ npm run typeorm migration:create -- -n CreateClass
     // código omitido
   }
 
-# como criar uma migration (ver o script "typescritp" em package.json). Vai gerar um arquivo chamado <timestamp-createClass.ts>
+# Executando a migration gerada no comando acima vai gerar um arquivo chamado <timestamp-createClass.ts>
 npm run typeorm migration:run
 
 # observe na sequencia que vai criar a tabela "class" e a "migration" que server para guardar as mudanças de versão. O mesmo foi feito para a tabela "lesson"
 
-# comando para criar uma entity a partir do nome
+# comando para criar uma entity a partir da tabela.
 npx typeorm entity:create -n Class
 ```
 ### 6 - Inserir e Pesquisar Dados no Postman
