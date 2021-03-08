@@ -56,6 +56,8 @@ npm run typeorm migration:create -- -n CreateClass
 
 # como criar uma migration (ver o script "typescritp" em package.json). Vai gerar um arquivo chamado <timestamp-createClass.ts>
 npm run typeorm migration:run
+
+# observe na sequencia que vai criar a tabela "class" e a "migration" que server para guardar as mudanças de versão. O mesmo foi feito para a tabela "lesson"
 ```
 
 ### Mais referencias:
