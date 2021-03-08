@@ -5,15 +5,16 @@
   "username": "sa",
   "password": "strong!Passw0rd",
   "database": "tests",
+  "synchronize": true,
   "entities": [
     "src/models/**/*.ts"
   ],
     "migrations": [
-    "src/migrations/**/*.ts"
+    "src/database/migrations/**/*.ts"
   ],
   "cli":{
     "migrationsDir": [
-      "src/migrations/"
+      "src/database/migrations/"
     ],
     "entitiesDir": "src/models"
   }
