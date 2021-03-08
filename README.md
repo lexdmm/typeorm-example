@@ -77,13 +77,13 @@ Usando POST para inserir http://localhost:3000/class
 }
 ```
 
-Usando GET para consultar dados 
+Usando GET para consultar a lista de dados 
 http://localhost:3000/class/all
 
-Usando GET para um dado específico, no caso pelo id
+Usando GET para pesquisar pelo id
 http://localhost:3000/class/id/<id>
 
-Usando GET para um dado específico, no caso pelo nome da class
+Usando GET para pesquiser pelo nome da class
 http://localhost:3000/class/name/<name>
 
 ### Mais referencias:
