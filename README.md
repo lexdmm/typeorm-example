@@ -34,7 +34,7 @@ npm install
 npm install --save-dev
 ```
 
-### 4 - Versionando seu banco
+### 5 - Versionando seu banco
 ``` bash
 # como criar uma migration (ver o script "typeorm" em package.json). Vai gerar um arquivo chamado <timestamp-createClass.ts>
 npm run typeorm migration:create -- -n CreateClass
@@ -62,7 +62,7 @@ npm run typeorm migration:run
 # comando para criar uma entity a partir do nome
 npx typeorm entity:create -n Class
 ```
-### Inserir e Pesquisar Dados no Postman
+### 6 - Inserir e Pesquisar Dados no Postman
 
 Primeiro execute o comando subindo a aplicação na porta 3000
 ``` bash
