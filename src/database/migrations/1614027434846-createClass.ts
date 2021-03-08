@@ -10,8 +10,7 @@ export default class CreateClass1614027434846 implements MigrationInterface {
             name: 'id',
             type: 'bigint',
             isPrimary: true,
-            generationStrategy: 'increment',
-            default: 'bigint',
+            generationStrategy: 'increment'
           },
           {
             name: 'name',
