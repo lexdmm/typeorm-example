@@ -39,7 +39,7 @@ npm install --save-dev
 # como criar uma migration (ver o script "typeorm" em package.json). Vai gerar um arquivo chamado <timestamp-createClass.ts>
 npm run typeorm migration:create -- -n CreateClass
 
-# Ao rerar o 1614027434846-createClass.ts serão gerados dois métodos async "up" e "down" onde "up" cria e constroe e "down" desfaz ou dropa etc.
+# Ao gerar o 1614027434846-createClass.ts no comando acima serão criados dois métodos async "up" e "down" onde "up" cria e constroe e "down" desfaz ou dropa etc.
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
