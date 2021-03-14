@@ -106,7 +106,7 @@ ou não abrir o browser:
 ``` bash
 heroku: Press any key to open up the browser to login or q to exit: 
 ```
-É porque não conseguiu autenticar. Siga os 10 passos abaixo para resolver.
+É porque não conseguiu autenticar, provavelmente deve estar usando um computados da sua empresa. Siga os 10 passos abaixo para resolver.
 
 ### Como logar no heroku no Windows 10, siga as etapas abaixo:
 
