@@ -89,9 +89,66 @@ http://localhost:3000/class/id/<id>
 Usando GET para pesquiser pelo nome da class
 http://localhost:3000/class/name/<name>
 
+### 7 - Subir projeto no Heroku
+As adequações para subir este projeto no Heroku podem ser vistas na branch **feature/heroku-adequacoes**.
+Obviamente vai precisar ter uma conta no heroku. A documentação e o CLI do heroku estão disponíveis nesta página;
+https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+
+Use o comando:
+``` bash
+heroku login
+```
+Se ocorrer um erro como este:
+``` bash
+TypeError: Cannot read property 'id' of undefined
+```
+ou não abrir o browser:
+``` bash
+heroku: Press any key to open up the browser to login or q to exit: 
+```
+É porque não conseguiu autenticar. Siga os 10 passos abaixo para resolver.
+
+### Como logar no heroku no Windows 10, siga as etapas abaixo:
+
+1 - Clique com o botão direito no cadeado e clique em Certificado para visualizar os detalhes do emissor do certificado. Mas esteja logado na sua conta de e-mail que usou para criar a conta no heroku.
+
+2 - Abra a guia Caminho de certificação.
+
+3 - Escolha o primeiro certificado que aparece no topo da lista e pressione o botão "Exibir certificado".
+
+4 - Abra a guia Detalhes e clique no botão Copiar para arquivo.
+
+5 - Escolha o formato X.509 codificado em base64 (* .cer) e clique no botão "Avançar", Vai abrir uma caixa de dialogo.
+
+6 - Clique no botão "Procurar" como o arquivo não existe, insira um local de sua preferencia e nome de arquivo que quiser. Lembre-se de salvar com a extensão "cer". Exemplo: C:\seu\diretorio\proxy.cer.
+
+7 - Feche as janelas, abra o prompt de comando do Windows e execute a seguinte linha de comando (substitua o local pelo caminho onde você salvou o certificado):
+``` bash
+SET NODE_EXTRA_CA_CERTS=C:\seu\diretorio\proxy.cer.
+```
+
+8 - Reverta para o antigo comportamento do OpenSSL:
+``` bash
+git config --global http.sslBackend "openssl"
+git config --global http.sslCAInfo D:\Users\uendel\Desktop\proxy.cer
+```
+
+9 - Faça login heroku. Uma guia será aberta no navegador. Clique no botão Login.
+``` bash
+] heroku login
+```
+
+10 - Verifique se a instalação foi bem-sucedida executando
+``` bash
+heroku whoami
+```
+
 ### Mais referencias:
 - Você pode ver a documentação completa do TypeOrm aqui:
 https://typeorm.io/
 
 - O curso completo onde aprendi sobre este projeto se encontra em:
 https://www.youtube.com/playlist?list=PLDqnSpzNKDvn-3cpMf3yPn7gTnb3ooy4b
+
+- Sobre problemas de login no Heroku
+https://github.com/heroku/cli/issues/1054
