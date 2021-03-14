@@ -1,7 +1,8 @@
 # TypeORM Example
 ## Descrição
-Exemplo de utilização do TypeORM com o docker. 
-- como versionar um banco com o CLI do TypeOrm
+Exemplo de utilização do TypeORM com o docker e heroku. 
+Este projeto foi elaborado como um exemplo abordando utilizar um banco mssql (sql server) no doker e outro com o mesmo esquema de dados dentro do heroku com banco postgress.
+Também com exemplos de como versionar um banco com o CLI e estrururas de relacionamento, tudo com o TypeOrm.
 
 ### 1 - Instalação do Docker 
 Primeiro baixe o docker na sua máquina e instale, ele roda em linux ou windowns 10. Mas no caso do windowns 10 somente nas verões que possuem o kernel do linux.
@@ -91,10 +92,10 @@ http://localhost:3000/class/name/<name>
 
 ### 7 - Subir projeto no Heroku
 As adequações para subir este projeto no Heroku podem ser vistas na branch **feature/heroku-adequacoes**.
-Obviamente vai precisar ter uma conta no heroku. A documentação e o CLI do heroku estão disponíveis nesta página;
+Obviamente precisa ter uma conta no heroku. A documentação e o CLI do heroku está disponível nesta página;
 https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
 
-Use o comando:
+Use o comando abaixo para fazer login, deve abrir uma janela de autenticação pedindo para você usar seu usuário e senha do heroku:
 ``` bash
 heroku login
 ```
@@ -102,11 +103,15 @@ Se ocorrer um erro como este:
 ``` bash
 TypeError: Cannot read property 'id' of undefined
 ```
-ou não abrir o browser:
+ou não abrir o browser, ou aparecerem erros de autenticação como abaixo:
 ``` bash
-heroku: Press any key to open up the browser to login or q to exit: 
+remote: !       WARNING:
+remote: !       Do not authenticate with username and password using git.
+remote: !       Run `heroku login` to update your credentials, then retry the git command.
+remote: !       See documentation for details: https://devcenter.heroku.com/articles/git#http-git-authentication
+fatal: Authentication failed for 'https://git.heroku.com/typeorm-example.git/'
 ```
-É porque não conseguiu autenticar, provavelmente deve estar usando um computados da sua empresa. Siga os 10 passos abaixo para resolver.
+É porque não conseguiu autenticar, deve estar usando um computador organizacional. Siga os 10 passos abaixo para resolver.
 
 ### Como logar no heroku no Windows 10, siga as etapas abaixo:
 
