@@ -100,6 +100,14 @@ Use o comando abaixo para fazer login, deve abrir uma janela de autenticação p
 ``` bash
 heroku login
 ```
+Comando para monitorar deploys e outros comportamentos:
+``` bash
+heroku logs --tail
+```
+Comando para acessar o bash do heroku:
+``` bash
+heroku run bash
+```
 Se ocorrer um erro como este:
 ``` bash
 TypeError: Cannot read property 'id' of undefined
