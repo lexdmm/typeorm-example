@@ -140,7 +140,7 @@ git config --global http.sslCAInfo D:\Users\uendel\Desktop\proxy.cer
 
 9 - Faça login heroku. Uma guia será aberta no navegador. Clique no botão Login.
 ``` bash
-] heroku login
+heroku login
 ```
 
 10 - Verifique se a instalação foi bem-sucedida executando
