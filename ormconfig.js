@@ -1,6 +1,6 @@
-console.log('Ambiente:', process.env.NODE_ENV, "- Banco tipo:", process.env.NODE_ENV == "development" ? "mssql" : "postgress");
+console.log('Ambiente:', process.env.NODE_ENV, "- Banco tipo:", process.env.NODE_ENV == "development" ? "mssql" : "postgres");
 module.exports = {    
-    "type": process.env.NODE_ENV == "development" ? "mssql" : "postgress",
+    "type": process.env.NODE_ENV == "development" ? "mssql" : "postgres",
     "url": process.env.DATABASE_URL,
     "synchronize": true,
     "entities": [
