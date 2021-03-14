@@ -93,7 +93,6 @@ Usando GET para pesquiser pelo nome da class
 http://localhost:3000/class/name/<name>
 
 ### 7 - Subir projeto no Heroku
-As adequações para subir este projeto no Heroku podem ser vistas na branch **feature/heroku-adequacoes**.
 Obviamente precisa ter uma conta no heroku. A documentação e o CLI do heroku está disponível nesta página;
 https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
 
