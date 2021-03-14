@@ -2,6 +2,8 @@
 ## Descrição
 Exemplo de utilização do TypeORM com o docker e heroku. 
 Este projeto foi elaborado como um exemplo abordando utilizar um banco mssql (sql server) no doker e outro com o mesmo esquema de dados dentro do heroku com banco postgress.
+Quando roda local deve utilizar DATABASE_URL para conectar no banco sqlserver local, quando roda no heroku, lá por default usa o DATABASE_URL que aponta para o banco postgress.
+Mesmo o banco local sendo diferente do banco remoto ao rodar as rotinas deverá usar o Typeorm para gerar as tabelas. Como o Typeorm não faz distinção de banco, os mesmo scripts models podem ser usados para criar as tabelas. 
 Também com exemplos de como versionar um banco com o CLI e estrururas de relacionamento, tudo com o TypeOrm.
 
 ### 1 - Instalação do Docker 
