@@ -1,9 +1,8 @@
 # TypeORM Example
 ## Descrição
 Exemplo de utilização do TypeORM com o docker e heroku. A idéia é um teste de migração.
-Este projeto foi elaborado como um exemplo abordando utilizar um banco mssql (sql server) no doker e outro com o mesmo esquema de dados dentro do heroku com banco postgres.
-Quando roda local deve utilizar DATABASE_URL para conectar no banco sqlserver local, quando roda no heroku, lá por default usa o DATABASE_URL que aponta para o banco postgres.
-Mesmo o banco local sendo diferente do banco remoto ao rodar as rotinas deverá usar o Typeorm para gerar as tabelas. Como o Typeorm não faz distinção de banco, os mesmo scripts models podem ser usados para criar as tabelas. 
+Este projeto foi elaborado como um exemplo abordando utilizar um banco postgres no doker e outro com o mesmo esquema de dados dentro do heroku.
+Quando rodar local deve utilizar DATABASE_URL para conectar, quando roda no heroku, lá por default usa o DATABASE_URL que aponta para o banco postgres lá.
 Também com exemplos de como versionar um banco com o CLI e estrururas de relacionamento, tudo com o TypeOrm.
 
 ### 1 - Instalação do Docker 
@@ -11,22 +10,17 @@ Primeiro baixe o docker na sua máquina e instale, ele roda em linux ou windowns
 O download pode ser feito aqui: https://www.docker.com/products/docker-desktop
 
 ### 2 - Instalando um banco de dados no docker. 
-Com o Doker instalado, crie um banco de dados baixando uma imagem no https://hub.docker.com/. Nesse projeto vou utilizar uma do sqlserver, mas você pode escolher o banco que mais gosta de usar. O link desta imagem está aqui: https://hub.docker.com/_/microsoft-mssql-server
+Com o Doker instalado, crie um banco de dados baixando uma imagem no https://hub.docker.com/. Nesse projeto vou utilizar uma do postgres. O link desta imagem está aqui: https://hub.docker.com/_/postgres
 
-**1 - Para o sqlserver execute o comando para baixar a imagem no doker:**
+**1 - Execute o comando para baixar a imagem no doker:**
 ``` bash
-docker pull mcr.microsoft.com/mssql/server:2017-latest
+docker pull postgres
 ```
-**2 - Para criar a instância do banco execute o comando abaixo considerando o padrão de senhas do sqlserver:**
+**2 - Para criar a instância do banco execute o comando abaixo (a porta 5433 é para acesso local, a 5432 é a que acesso no doker):**
 ``` bash
-docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1440:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5433:5432 -d postgres
 ```
-Defini uma senha para o banco que se encontra no arquivo ormconfig.json na porta 1440, mas você pode definir a porta e a senha que quiser, ao conectar nessa porta ele direciona para porta 1433 dentro do docker. **Nesse momento não me preocupei em expor a senha do banco, porquê é um banco para fins de teste, tenha esse cuidado no gitHub**.
-
-### 3 - Instalação doSQL Server Management Studio (SSMS)
-Baixar o SQL Server Management Studio (SSMS) para manipular o banco de dados:
-https://docs.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
-Como a Microsoft vive mudando os links, pesquise pelo nome que achará facilmente.
+Defini uma senha para o banco na porta 5433, mas você pode definir a porta e a senha que quiser, ao conectar nessa porta ele direciona para porta 5432 dentro do docker. **Nesse momento não me preocupei em expor a senha do banco, porquê é um banco para fins de teste, tenha esse cuidado no gitHub**.
 
 ### 4 - Instalação da Aplicação 
 ``` bash
@@ -42,7 +36,7 @@ npm install --save-dev
 # Executar o comadno abaixo para criar uma migration (ver o script "typeorm" em package.json). Vai gerar o fonte chamado <timestamp-createClass.ts>
 npm run typeorm migration:create -- -n CreateClass
 
-# Ao gerar o 1614027434846-createClass.ts no comando acima serão criados dois métodos async "up" e "down" onde "up" cria e constroe e "down" desfaz ou dropa etc.
+# Ao gerar o <codigo>-createClass.ts no comando acima serão criados dois métodos async "up" e "down" onde "up" cria e constroe e "down" desfaz ou dropa etc.
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -157,7 +151,7 @@ heroku login
 heroku whoami
 ```
 
-### Mais referencias:
+### Referencias:
 - Você pode ver a documentação completa do TypeOrm aqui:
 https://typeorm.io/
 
