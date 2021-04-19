@@ -22,6 +22,10 @@ docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5433:5432 -d postgre
 ```
 Defini uma senha para o banco na porta 5433, mas você pode definir a porta e a senha que quiser, ao conectar nessa porta ele direciona para porta 5432 dentro do docker. **Nesse momento não me preocupei em expor a senha do banco, porquê é um banco para fins de teste, tenha esse cuidado no gitHub**.
 
+### 3 - Definir. 
+Após instalar a instância crie um banco de dados chamado "school" dentro da instancia do postgres que está no seu docker. 
+Conecte o banco usando um gerenciador, usei o DBeaver, conforme vi no curso que fiz. O usuário e senha será o que ficou definido no doker "postgress", conecte localhost, na porta 5433.
+
 ### 4 - Instalação da Aplicação 
 ``` bash
 # install dependencies
